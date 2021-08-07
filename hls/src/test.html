@@ -1,0 +1,39 @@
+
+<!-- No implementtation -->
+<!-- Can not use docker image(tiangolo/nginx-rtmp) to implement 'hls' -->
+<!-- The ffmpeg can not convert from rtsp to rtmp -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>test rtmp</title>
+
+        <script>window.HELP_IMPROVE_VIDEOJS = false;</script>
+
+        <!--Invoke videoJS-->
+        <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
+
+        <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+        <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+
+        <!--Invoke VideoJs-flash to solve the problem of compatiblity-->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/videojs-flash@2/dist/videojs-flash.min.js"></script> -->
+    </head>
+
+    <body>
+        <video id="my-player" class="myVideo" controls preload="auto" autoplay="autoplay" width="500" height="400" data-setup='{}'>
+            <source src="http://localhost:8080/hls/test.m3u8" type='application/x-mpegURL'/>
+        </video>
+
+        <br />
+        <a href="https://get.adobe.com/cn/flashplayer/"; class="flashLoadMsg" target="_blank">启动FLASH播放器</a>
+
+        <!-- <script type="text/javascript">
+            videojs.options.flash.swf = 'https://cdn.bootcss.com/videojs-swf/5.4.1/video-js.swf';
+            var player = videojs('my-player');
+            player.play(); //播放
+        </script> -->
+    </body>
+
+</html>
